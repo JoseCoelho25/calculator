@@ -30,13 +30,13 @@ function MainLayout() {
   
   return (
     <div>
-      <div className={`container ${bgColor} ${text} mx-auto w-screen`} id="bg">
+      <div className={`container ${bgColor} ${text} mx-auto w-screen h-screen`} id="bg">
         <div className="w-1/2 mx-auto justify-center flex h-10 mt-24 px-2">
           <div className="w-full pt-3 font-bold text-2xl">Calc</div>
           <input
             type="button"
             value={value}
-            className={`${color} w-24 h-full rounded-full`}
+            className={`${color} w-24 h-full rounded-full px-2`}
             onClick={toggle}
           />
         </div>

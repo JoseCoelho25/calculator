@@ -1,11 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 
 function Buttons() {
-    function getValue(event){
-        const element = event.currentTarget.value;
-        console.log(element);
-    }
+  const [firstNumber, setFirstNumber] = useState ("")
+  const [operator, setOperator] = useState("");
+  const [secondNumber, setSecondNumber] = useState("");
 
+    function setValue(event){
+      const element = event.currentTarget.value;
+      const x = parseInt(element);
+      if( x === Number){
+        setFirstNumber(x)
+      }
+    }
+    console.log(firstNumber)
+    
   return (
     <div className="container w-screen mx-auto">
       <div className="m-2">
@@ -14,97 +22,97 @@ function Buttons() {
             type="text"
             value="7"
             className="rounded-lg text-center bg-blue-700 h-20 "
-            onClick={getValue}
+            onClick={setValue}
           />
           <input
             type="text"
             value="8"
             className="rounded-lg text-center bg-blue-700"
-            onClick={getValue}
+            onClick={setValue}
           />
           <input
             type="text"
             value="9"
             className="rounded-lg text-center bg-blue-700"
-            onClick={getValue}
+            onClick={setValue}
           />
           <input
             type="text"
             value="DEL"
             className="rounded-lg text-center bg-gray-700 text-2xl"
-            onClick={getValue}
+            onClick={setValue}
           />
           <input
             type="text"
             value="4"
             className="rounded-lg text-center bg-blue-700 h-20"
-            onClick={getValue}
+            onClick={setValue}
           />
           <input
             type="text"
             value="5"
             className="rounded-lg text-center bg-blue-700"
-            onClick={getValue}
+            onClick={setValue}
           />
           <input
             type="text"
             value="6"
             className="rounded-lg text-center bg-blue-700"
-            onClick={getValue}
+            onClick={setValue}
           />
           <input
             type="text"
             value="+"
             className="rounded-lg text-center bg-blue-700"
-            onClick={getValue}
+            onClick={setValue}
           />
           <input
             type="text"
             value="1"
             className="rounded-lg text-center bg-blue-700 h-20"
-            onClick={getValue}
+            onClick={setValue}
           />
           <input
             type="text"
             value="2"
             className="rounded-lg text-center bg-blue-700"
-            onClick={getValue}
+            onClick={setValue}
           />
           <input
             type="text"
             value="3"
             className="rounded-lg text-center bg-blue-700"
-            onClick={getValue}
+            onClick={setValue}
           />
           <input
             type="text"
             value="-"
             className="rounded-lg text-center bg-blue-700"
-            onClick={getValue}
+            onClick={setValue}
           />
           <input
             type="text"
             value="."
             className="rounded-lg text-center bg-blue-700 h-20"
-            onClick={getValue}
+            onClick={setValue}
           />
           <input
             type="text"
             value="0"
             className="rounded-lg text-center bg-blue-700"
-            onClick={getValue}
+            onClick={setValue}
           />
           <input
             type="text"
             value="/"
             className="rounded-lg text-center bg-blue-700"
-            onClick={getValue}
+            onClick={setValue}
           />
           <input
             type="text"
             value="*"
             className="rounded-lg text-center bg-blue-700"
-            onClick={getValue}
+            onClick={setValue}
           />
         </div>
       </div>
