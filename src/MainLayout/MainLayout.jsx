@@ -3,6 +3,12 @@ import Display from "../Components/Display";
 import Buttons from "../Components/Buttons";
 
 function MainLayout() {
+  const [firstNumber, setFirstNumber] = useState("");
+  const [result, setResult] = useState("");
+
+  console.log(result)
+  
+  
   const [value, setValue] = useState("Light-mode");
   const [color, setColor] = useState ("bg-blue-400");
   const [bgColor, setBgColor] = useState ("bg-indigo-500");
@@ -40,8 +46,14 @@ function MainLayout() {
             onClick={toggle}
           />
         </div>
-        <Display />
-        <Buttons />
+        <Display 
+        firstNumber={firstNumber}
+        result={result}
+        />
+        <Buttons 
+        firstNumber={setFirstNumber}
+        result={setResult}
+        />
       </div>
     </div>
   );
