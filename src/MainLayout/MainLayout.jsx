@@ -3,12 +3,11 @@ import Display from "../Components/Display";
 import Buttons from "../Components/Buttons";
 
 function MainLayout() {
+  //const for calculations
   const [firstNumber, setFirstNumber] = useState("");
   const [result, setResult] = useState("");
 
-  console.log(result)
-  
-  
+  // light and dark mode button
   const [value, setValue] = useState("Light-mode");
   const [color, setColor] = useState ("bg-blue-400");
   const [bgColor, setBgColor] = useState ("bg-indigo-500");
@@ -36,8 +35,9 @@ function MainLayout() {
   
   return (
     <div>
-      <div className={`container ${bgColor} ${text} mx-auto w-screen h-screen`} id="bg">
-        <div className="w-1/2 mx-auto justify-center flex h-10 mt-24 px-2">
+      <div className={`container ${bgColor} ${text} mx-auto w-screen h-screen pt-24 `} id="bg">
+        <div className=" w-1/4 mx-auto">
+        <div className=" mx-auto justify-center flex h-10  px-2 ">
           <div className="w-full pt-3 font-bold text-2xl">Calc</div>
           <input
             type="button"
@@ -54,6 +54,7 @@ function MainLayout() {
         firstNumber={setFirstNumber}
         result={setResult}
         />
+      </div>
       </div>
     </div>
   );
