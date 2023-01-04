@@ -36,7 +36,7 @@ function MainLayout() {
   return (
     <div>
       <div className={`container ${bgColor} ${text} mx-auto w-screen h-screen pt-24 `} id="bg">
-        <div className=" w-1/4 mx-auto">
+        <div className=" w-2/3 md:w-1/2 lg:w-1/4 mx-auto">
         <div className=" mx-auto justify-center flex h-10  px-2 ">
           <div className="w-full pt-3 font-bold text-2xl">Calc</div>
           <input
