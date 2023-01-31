@@ -1,33 +1,47 @@
 import React, {useState} from "react";
 
-function Buttons( {firstNumber, result}) {
-  const [teste, setTeste]= useState("")
+function Buttons({firstNumber, result}) {
+  const [expression, setExpression] = useState("");
 
-  function handleNumber(e){
+  function handleNumber(e) {
     const element = e.currentTarget.value;
-    firstNumber(op => op + element)
-    setTeste(op => op + element)
+    if (element === '%') {
+      firstNumber(op => op / 100);
+      setExpression(op => `${op}/100`);
+    } else {
+      firstNumber(op => op + element);
+      setExpression(op => op + element);
+    }
   }
-    
-  function resetNumber(){
+
+  function resetNumber() {
     firstNumber("");
-    result("")
-    setTeste("")
+    result("");
+    setExpression("");
   }
 
-  function handleResult(){
-    result(eval(teste));
+  function clearLastComputation() {
+    firstNumber(expression.slice(0, -1));
+    setExpression(expression.slice(0, -1));
   }
+  
+   function handleResult(){
+     result(eval(expression));
+   }
+  // replaced eval since its a security risk
+  // function handleResult(){
+  //   result(evaluateExpression(expression));
+  // }
+  // function evaluateExpression(expression) {
+  //   return new Function(`return ${expression}`).apply(null);
+  // }
+    
 
- function clearLastComputation(){
-    firstNumber(teste.slice(0, -1));
-    let str = teste.slice(0,-1);
-    setTeste(str)
- }
+ 
   return (
     <div className="container w-full mx-auto mt-4 ">
       <div className="">
-        <div className=" mx-auto grid grid-cols-4 p-4 gap-x-6 gap-y-4 bg-gray-400  text-3xl xl:text-4xl rounded-lg shadow-2xl shadow-indigo-500/50 font-mono">
+        <div className=" mx-auto grid grid-cols-4 p-4 gap-x-2 gap-y-4 bg-gray-400  text-3xl xl:text-4xl rounded-lg shadow-2xl shadow-indigo-500/50 font-mono">
         <button
           value="C"
           className="rounded-lg text-center bg-blue-700 border-b-4 border-blue-900"
